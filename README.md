@@ -70,6 +70,43 @@ Code:
     numberOfOccurrencesInText(word, text);
 Expected Output: 3
 
+Test 7: "If an empty string is passed in as a word, it should return 0."
+Code:
+    const word = "";
+    const text = "red RED Red!";
+    numberOfOccurrencesInTest(word, text);
+Expected Output: 0
+
+##### **Describe:** boldPassage() // UI LOGIC //
+
+Test 1: "It should return null if no word or text is entered."
+Code:
+    const text = "";
+    const word = "";
+    boldPassage(word, text);
+Expected Output: null
+
+Test 2: "It should return a non-matching word in a p tag."
+Code: 
+    const word = "hello";
+    const text = "yo";
+    boldPassage(word, text);
+Expected Output: <p>yo</p>
+
+Test 3: "It should return a matching word in a strong tag."
+Code:
+    const word = "hello";
+    const text = "hello";
+    boldPassage(word, text);
+Expected Output: <p><strong>hello</strong><p>
+
+Test 4: "It should wrap words that match in strong tages but not words that don't."
+Code:
+    const word = "hello";
+    const text = "hello there";
+    boldPassage(word, text);
+Expected Output: <p><strong>hello</strong> there</p>
+
 ##### **Describe:** omitOffensiveWords()
 
 Test 1: "If text is empty, it should return an empty string."
