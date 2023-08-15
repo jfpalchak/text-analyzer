@@ -57,20 +57,14 @@ function omitOffensiveWords(text) {
     // const textArray = text.split(" ");
     const offensiveWords = ['zoinks', 'muppeteer', 'biffaroni', 'loopdaloop'];
     
-    let bool= false;
+    let newText = text;
 
     offensiveWords.forEach(function(word) {
-        if (text.includes(word)) {
-            bool = true;
+        if (text.toLowerCase().includes(word.toLowerCase())) {
+            newText = text.replace(word, "").replace("  ", " ");
         } 
-        //element.toLowerCase().includes(word.toLowerCase())
     });
 
-    return bool;
-
-    // if (text === "") {
-    //     return "";
-    // } 
-    //     return text;
+    return newText;
 }
 

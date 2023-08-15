@@ -96,22 +96,19 @@ Code:
     omitOffensiveWords(text);
 Expected Outcome: true
 
+Test 5: "It should remove offensive words and return a new string without the offensive words."
+Code:
+    const text = "You are a zoinks cat.";
+    omitOffensiveWords(text);
+Expected Output: "You are a cat."
 
+/*DID NOT COMPLETE*/
+Test 6: "Removes and replaces offensive words, regardless of case."
+Code:
+    const text = "You are a ZOINKS cat.";
+    omitOffensiveWords(text);
+Expected Output: 
 
-
-Example Text: "You are a zoinks yellow cat."
-
-
-First step: slice the text before the bad word. (result = two strings: s1 with no bad word and s2 that begins with the bad word).
-    s1 = "You are a"
-    s2 = "zoinks yellow cat."
-
-Second step: slice the s2 after bad word. (result = two s2 strings, s2.a is the bad word along, and s2.b does not have the bad word).
-    s2.a = "zoinks"
-    s2.b = "yellow cat."
-
-Third step: concat s1 and s2.b. (result = the text no longer has the bad word).
-    s1 + s2.b = "You are a yellow cat."
 
 
 
