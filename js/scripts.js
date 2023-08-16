@@ -1,5 +1,30 @@
 // Business Logic
 
+function countForEachWord(text) {
+    if (text.trim().length === 0){
+        return null;
+    }
+
+    const textArray = text.split(" ");
+    let countArray = [];
+    let wordArray = [];
+    textArray.forEach(function(word){
+        if (!wordArray.includes(word)){
+            let wordCount = numberOfOccurrencesInText(word, text);
+            wordArray.push(word);
+            countArray.push(wordCount);
+        }
+    });
+
+    console.log(countArray);
+    console.log(wordArray);
+
+    // if (textArray.length === 1) {
+    //     return (textArray[0] + ": " + textArray.length);
+    // }
+
+}
+
 // lesson function 1
 function wordCounter(text) {
     

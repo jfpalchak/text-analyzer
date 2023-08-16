@@ -146,6 +146,21 @@ Code:
     omitOffensiveWords(text);
 Expected Output: 
 
+##### **Describe:** countForEachWord()
+
+Test 1: "It should return null if an empty string is passed through."
+Code:
+    const text = "";
+    countForEachWord(text);
+Expected Output: null
+
+Test 2: "If the text contains one word, it should return a count of 1, alongside the respective word."
+Code:
+    const text = "word";
+    countForEachWord(text);
+Expected Output: "word: 1"
+
+Test 3: "If the text contains two different words, it should return a count of 1 for each word."
 
 
 
