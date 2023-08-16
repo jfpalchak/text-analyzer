@@ -1,27 +1,31 @@
 // Business Logic
 
+// countForEachWord() takes a text passage as a parameter,
+// returns a list for how many times each word was used in the passage,
+// sorted in descending order
 function countForEachWord(text) {
     if (text.trim().length === 0){
         return null;
     }
 
     const textArray = text.split(" ");
-    let countObjectArray = [];
-    let wordArray = [];
-    textArray.forEach(function(word, index){
-        if (!wordArray.includes(word.toLowerCase())){ // if this word (in lower case) hasn't been counted yet, 
+    let wordCountArray = [];
+    let countedArray = [];
+    textArray.forEach(function(word){
+        if (!countedArray.includes(word.toLowerCase())){ // if this word (in lower case) hasn't been counted yet, 
             let wordCount = numberOfOccurrencesInText(word, text); // count how often it appears in text
-            wordArray.push(word.toLowerCase()); // then, add this word to the list of words counted so far, but in lower case
-            countObjectArray.push({ // create list of objects,
+            countedArray.push(word.toLowerCase()); // then, add this word to the list of words counted so far, but in lower case
+            wordCountArray.push({ // create list of objects,
                 word: word.toLowerCase(), // each with the word (in lower case)
                 count: wordCount // and its count
             });
         }
     });
 
-    countObjectArray.sort(function(a, b){return b.count - a.count});
+    // sort the array in descending order, or, highest to lowest
+    wordCountArray.sort(function(a, b){return b.count - a.count});
 
-    return countObjectArray;
+    return wordCountArray;
 
 }
 
