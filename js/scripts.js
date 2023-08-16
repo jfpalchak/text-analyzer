@@ -6,18 +6,23 @@ function countForEachWord(text) {
     }
 
     const textArray = text.split(" ");
-    let countArray = [];
+    let countObjectArray = [];
     let wordArray = [];
     textArray.forEach(function(word){
-        if (!wordArray.includes(word)){
-            let wordCount = numberOfOccurrencesInText(word, text);
-            wordArray.push(word);
-            countArray.push(wordCount);
+        if (!wordArray.includes(word)){ // if this word hasn't been counted yet, 
+            let wordCount = numberOfOccurrencesInText(word, text); // count how often it appears in text
+            wordArray.push(word); // then, add this word to the list of words counted so far
+            countObjectArray.push({
+                word: word,
+                count: wordCount
+            }); // and add this word's count to our list of counts
         }
     });
 
-    console.log(countArray);
-    console.log(wordArray);
+    // console.log(wordArray);
+    // console.log(numberArray);
+
+    return countArray;
 
 }
 

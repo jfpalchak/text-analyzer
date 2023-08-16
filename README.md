@@ -160,15 +160,28 @@ Code:
     countForEachWord(text);
 Expected Output: "word: 1"
 
-Test 3: "If the text contains two different words, it should create a list of each word, and a list for each word's occurence."
+Test 3: "If the text contains two different words, it should create a list of each word, and a list for each word's occurrence."
+Code:
     const text = "one two";
     countForEachWord(text);
 Expected Output:    array1 ['one', 'two']
                     array2 [1, 1]
 
 Test 4: "If the text contains multiple of the same word, it should create a list containing that one word, and a second list containing the number of the words occurrence."
+Code:
     const text = "word word word";
     countForEachWord(text);
 Expected Output:    array1 ['word']
                     array2 [3]
 
+Test 5: "It should return one array, where each element is a word and its number of occurrences throughout a string of text."
+Code:
+    const text = "word word word count count hello";
+    countForEachWord(text);
+Expected Output: ["word: 3", "count: 2", "hello: 1"]
+
+Test 6: "It should return one array, which contains objects whose properties are the words and their number of occurrences throughout a string of text."
+Code:
+    const text = "word word word count count hello";
+    countForEachWord(text);
+Expected Output: [{word: word, count: 3}, {word: count, count: 2}, {word: hello, count: 1}]
