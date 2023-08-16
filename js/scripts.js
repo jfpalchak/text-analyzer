@@ -19,10 +19,6 @@ function countForEachWord(text) {
     console.log(countArray);
     console.log(wordArray);
 
-    // if (textArray.length === 1) {
-    //     return (textArray[0] + ": " + textArray.length);
-    // }
-
 }
 
 // lesson function 1
