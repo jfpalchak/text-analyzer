@@ -185,3 +185,16 @@ Code:
     const text = "word word word count count hello";
     countForEachWord(text);
 Expected Output: [{word: word, count: 3}, {word: count, count: 2}, {word: hello, count: 1}]
+
+Test 7: "It should return the array of word counts, in descending order."
+Code:
+    const text = "word word another hello hello hello";
+    countForEachWord(text);
+Expected Output: [{word: hello, count: 3}, {word: word, count: 2}, {word: another, count: 1}]
+
+Test 8: "It should return the array, and ignore the case of each word."
+Code:
+    const text = "word Word another HELLO hello hello";
+    countForEachWord(text);
+Expected Output: [{word: hello, count: 3}, {word: word, count: 2}, {word: another, count: 1}]
+

@@ -8,21 +8,20 @@ function countForEachWord(text) {
     const textArray = text.split(" ");
     let countObjectArray = [];
     let wordArray = [];
-    textArray.forEach(function(word){
-        if (!wordArray.includes(word)){ // if this word hasn't been counted yet, 
+    textArray.forEach(function(word, index){
+        if (!wordArray.includes(word.toLowerCase())){ // if this word (in lower case) hasn't been counted yet, 
             let wordCount = numberOfOccurrencesInText(word, text); // count how often it appears in text
-            wordArray.push(word); // then, add this word to the list of words counted so far
-            countObjectArray.push({
-                word: word,
-                count: wordCount
-            }); // and add this word's count to our list of counts
+            wordArray.push(word.toLowerCase()); // then, add this word to the list of words counted so far, but in lower case
+            countObjectArray.push({ // create list of objects,
+                word: word.toLowerCase(), // each with the word (in lower case)
+                count: wordCount // and its count
+            });
         }
     });
 
-    // console.log(wordArray);
-    // console.log(numberArray);
+    countObjectArray.sort(function(a, b){return b.count - a.count});
 
-    return countArray;
+    return countObjectArray;
 
 }
 
