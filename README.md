@@ -2,6 +2,7 @@
 
 ##### **Describe:** wordCounter()
 
+```javascript
 Test: "It should return 1 if a passage has just one word."
 Code:
 const text = "hello";
@@ -25,9 +26,11 @@ Expected Output: 0
 Test: "It should not count numbers as words."
 Code: wordCounter("hi there 77 19");
 Expected Output: 2
+```
 
 ##### **Describe:** numberOfOccurrencesInText()
 
+```javascript
 Test 1: "It should return 0 occurrences of a word for an empty string."
 Code:
     const text = "";
@@ -76,9 +79,11 @@ Code:
     const text = "red RED Red!";
     numberOfOccurrencesInTest(word, text);
 Expected Output: 0
+```
 
 ##### **Describe:** boldPassage() // UI LOGIC //
 
+```javascript
 Test 1: "It should return null if no word or text is entered."
 Code:
     const text = "";
@@ -106,9 +111,11 @@ Code:
     const text = "hello there";
     boldPassage(word, text);
 Expected Output: <p><strong>hello</strong> there</p>
+```
 
 ##### **Describe:** omitOffensiveWords()
 
+```javascript
 Test 1: "If text is empty, it should return an empty string."
 Code:
     omitOffensiveWords("");
@@ -139,15 +146,16 @@ Code:
     omitOffensiveWords(text);
 Expected Output: "You are a cat."
 
-/*DID NOT COMPLETE*/
+// DID NOT COMPLETE 
 Test 6: "Removes and replaces offensive words, regardless of case."
 Code:
     const text = "You are a ZOINKS cat.";
     omitOffensiveWords(text);
 Expected Output: 
-
+```
 ##### **Describe:** countForEachWord()
 
+```javascript
 Test 1: "It should return null if an empty string is passed through."
 Code:
     const text = "";
@@ -197,4 +205,4 @@ Code:
     const text = "word Word another HELLO hello hello";
     countForEachWord(text);
 Expected Output: [{word: hello, count: 3}, {word: word, count: 2}, {word: another, count: 1}]
-
+```
